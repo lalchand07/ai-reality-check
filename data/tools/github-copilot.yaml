@@ -1,0 +1,44 @@
+id: github-copilot
+name: GitHub Copilot
+vendor: GitHub (Microsoft)
+category: coding-assistant
+summary: >
+  AI assistant built into VS Code, JetBrains, GitHub.com and the CLI: completions,
+  chat, agent mode and PR review. Billing moved to token-based AI Credits in June 2026.
+best_for:
+  - Inline autocomplete in almost any editor
+  - Pull-request review and summaries on GitHub
+  - Verified students who want a free starting point
+not_great_for:
+  - Students who need a specific frontier model (Student plan is Auto-only)
+  - Heavy agent workloads on the Student plan (200 credits/month)
+pricing:
+  - plan: Free
+    price: Free
+    notes: Auto model selection only.
+  - plan: Student
+    price: Free (verified students)
+    notes: Unlimited completions, 200 AI Credits/month, Auto model selection only (since 2026-06-24).
+  - plan: Pro / Pro+ / Max
+    price: See github.com/features/copilot/plans
+    notes: Manual model picker and higher limits.
+student_friendly: true
+free_tier: true
+platforms: [VS Code, Visual Studio, JetBrains, GitHub.com, CLI]
+gotchas:
+  - Claude Opus/Sonnet and GPT-5.4 can no longer be picked manually on the Student plan; Auto may still route to models from several providers.
+recent_changes:
+  - date: 2026-06-24
+    text: Free and Student plans switched to Auto model selection as the only option.
+  - date: 2026-06-01
+    text: Billing moved from requests to token-based AI Credits; Student plan gets 200 credits/month.
+  - date: 2026-04-27
+    text: GPT-5.3-Codex removed from the Student model picker.
+  - date: 2026-03-13
+    text: New Copilot Student plan; premium models removed from manual selection.
+sources:
+  - https://github.blog/changelog/2026-06-24-changes-to-model-selection-for-free-and-student-plans/
+  - https://github.blog/changelog/2026-03-13-updates-to-github-copilot-for-students/
+  - https://github.com/orgs/community/discussions/189268
+  - https://roboin.io/article/en/2026/06/25/github-copilot-free-and-student-plans-limited-to-auto-model-selection/
+last_verified: 2026-09-29

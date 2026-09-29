@@ -1,0 +1,18 @@
+month: 2026-06
+entries:
+  - date: 2026-06-24
+    tool: github-copilot
+    type: pricing
+    title: Copilot Free and Student become Auto-model only
+    summary: Manual model picker removed; Auto routes across providers subject to plan limits.
+    impact: high
+    sources:
+      - https://github.blog/changelog/2026-06-24-changes-to-model-selection-for-free-and-student-plans/
+  - date: 2026-06-01
+    tool: github-copilot
+    type: pricing
+    title: Copilot moves to token-based AI Credits
+    summary: Student plan receives 200 AI Credits per month plus unlimited code completions.
+    impact: high
+    sources:
+      - https://github.com/orgs/community/discussions/189268

@@ -1,0 +1,21 @@
+# Pages watched daily by scripts/watch.py. When a page's meaningful text changes,
+# the bot opens a PR with a draft changelog entry for a human to verify.
+watch:
+  - id: cursor-changelog
+    tool: cursor
+    url: https://cursor.com/changelog
+  - id: copilot-changelog
+    tool: github-copilot
+    url: https://github.blog/changelog/
+  - id: anthropic-news
+    tool: claude
+    url: https://www.anthropic.com/news
+  - id: claude-code-pro
+    tool: claude-code
+    url: https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan
+  - id: google-ai-plans
+    tool: google-antigravity
+    url: https://one.google.com/about/google-ai-plans/
+  - id: gemini-subscriptions
+    tool: jules
+    url: https://gemini.google/subscriptions/

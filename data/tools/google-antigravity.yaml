@@ -1,0 +1,34 @@
+id: google-antigravity
+name: Google Antigravity
+vendor: Google
+category: coding-agent
+summary: >
+  Google's agent-first development platform (IDE, CLI, SDK and IDE extensions) for
+  delegating coding tasks to autonomous agents that plan, execute and verify work
+  across editor, terminal and browser.
+best_for:
+  - Running several agents in parallel on bigger tasks
+  - People already paying for Google AI Pro
+  - Android and Google Cloud projects
+not_great_for:
+  - Users under 18 (age requirement)
+pricing:
+  - plan: Google AI Pro
+    price: See one.google.com
+    notes: Enhanced access / higher agent limits; AI credits used after baseline quota.
+  - plan: Google AI Ultra
+    price: "From $100/month"
+    notes: 5x higher Antigravity usage limit than AI Pro (announced at I/O 2026).
+student_friendly: partial
+free_tier: unknown
+platforms: [Desktop app, CLI, VS Code extension]
+recent_changes:
+  - date: 2026-08-21
+    text: Available in eligible Gemini Enterprise subscriptions; new IDE extensions including VS Code.
+  - date: 2026-05-19
+    text: Antigravity 2.0 desktop app and new $100 AI Ultra tier announced at I/O 2026.
+sources:
+  - https://support.google.com/googleone/answer/14534406?hl=en
+  - https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/
+  - https://cloud.google.com/blog/products/ai-machine-learning/expanding-google-antigravity-for-enterprise-customers
+last_verified: 2026-09-29

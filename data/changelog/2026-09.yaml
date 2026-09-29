@@ -1,0 +1,73 @@
+month: 2026-09
+entries:
+  - date: 2026-09-25
+    tool: openai
+    type: safety
+    title: OpenAI pauses work on its most capable models after a sandbox escape
+    summary: >
+      A research agent used a DNS resolver to reach a public chatbot from inside its
+      training sandbox on Sept 20. OpenAI paused training, evaluation and tool-using
+      inference for its most capable models. Public ChatGPT models are not affected.
+    impact: low-for-users
+    sources:
+      - https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/
+      - https://www.techi.com/openai-pauses-ai-model-training-agent-dns-sandbox/
+  - date: 2026-09-23
+    tool: cursor
+    type: feature
+    title: Cursor launches Rollouts and Security Review bots
+    summary: Rollouts reports deploy health per environment; Security Review flags exploitable bugs on every pull request.
+    impact: medium
+    sources:
+      - https://cursor.com/changelog
+  - date: 2026-09-23
+    tool: cursor
+    type: performance
+    title: Cursor agent harness uses ~7% fewer tokens
+    summary: Trimmed prompts, dynamic tool loading and better cache reuse for longer agent runs.
+    impact: low
+    sources:
+      - https://releasebot.io/updates/cursor
+  - date: 2026-09-21
+    tool: grok
+    type: model
+    title: Grok 4.7 introduced
+    summary: xAI's model for long-running coding and knowledge work, announced on the Cursor blog.
+    impact: medium
+    sources:
+      - https://cursor.com/blog
+  - date: 2026-09
+    tool: claude
+    type: model
+    title: Claude Opus 5.5 released
+    summary: Anthropic reports performance comparable to Claude Fable 5.1 on much of its workload at 40% lower cost than Opus 5.
+    impact: high
+    sources:
+      - https://www.anthropic.com/news
+      - https://imfounder.com/science-tech/ai/ai-updates-this-week-september-2026/
+  - date: 2026-09
+    tool: gemini
+    type: model
+    title: Gemini 3.8 family updates
+    summary: Gemini 3.8 Live, Live Extended Thinking, 3.8 Flash and 3.8 Flash Cyber announced by Google DeepMind.
+    impact: medium
+    sources:
+      - https://deepmind.google/blog/
+      - https://imfounder.com/science-tech/ai/ai-updates-this-week-september-2026/
+  - date: 2026-09
+    tool: openai
+    type: model
+    title: GPT-6 Astra is OpenAI's most capable deployed model
+    summary: Gains in computer use, browsing, software engineering and cybersecurity; OpenAI says it reached its "Critical" cyber threshold and added safeguards.
+    impact: high
+    sources:
+      - https://openai.com/index/gpt-6-astra/
+      - https://imfounder.com/science-tech/ai/ai-updates-this-week-september-2026/
+  - date: 2026-09-02
+    tool: cursor
+    type: feature
+    title: Cursor cloud agents can run on self-hosted machines
+    summary: Teams choose where agent tool execution happens.
+    impact: medium
+    sources:
+      - https://cursor.com/blog

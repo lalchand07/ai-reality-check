@@ -1,0 +1,31 @@
+name: Report a change or error
+description: A price, limit, model or feature changed, or something here is wrong
+title: "[change] "
+labels: [change, needs-verification]
+body:
+  - type: input
+    id: tool
+    attributes:
+      label: Tool
+      placeholder: e.g. Cursor, GitHub Copilot
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What changed or what's wrong?
+      description: Plain facts, please. What was true before, what's true now.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link (official page preferred)
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: When did it change? (if known)
+      placeholder: YYYY-MM-DD

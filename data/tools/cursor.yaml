@@ -1,0 +1,39 @@
+id: cursor
+name: Cursor
+vendor: Anysphere (acquired by SpaceX, Aug 2026)
+category: coding-ide
+summary: >
+  A full AI-first code editor (VS Code-based) with local and cloud agents that can
+  plan, edit many files, run commands, watch PRs and fix CI.
+best_for:
+  - Daily hands-on coding with an agent inside your editor
+  - Multi-file refactors and feature work
+  - Background cloud agents that keep working on a PR until CI passes
+not_great_for:
+  - Teams that cannot send code to third-party clouds without extra setup
+  - People who only want free autocomplete
+pricing:
+  - plan: Hobby
+    price: Free
+    notes: Limited agent requests, no credit card required.
+  - plan: Pro
+    price: "$20/month"
+    notes: Main individual plan.
+student_friendly: partial
+free_tier: true
+platforms: [macOS, Windows, Linux]
+recent_changes:
+  - date: 2026-09-23
+    text: Launched Rollouts (deploy health monitoring) and Security Review (exploitable-bug reports on every PR).
+  - date: 2026-09-02
+    text: Cloud agents can run on self-hosted machines you manage.
+  - date: 2026-08-19
+    text: Cloud agents can subscribe to events, hold a goal until met, and drive their own PRs to completion.
+  - date: 2026-08-14
+    text: Acquisition by SpaceX closed.
+sources:
+  - https://cursor.com/changelog
+  - https://cursor.com/blog
+  - https://en.wikipedia.org/wiki/Cursor_(company)
+  - https://petronellatech.com/blog/cursor-ai-ide-setup-guide/
+last_verified: 2026-09-29

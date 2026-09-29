@@ -1,0 +1,15 @@
+id: openai-paused-everything
+claim: "OpenAI shut down its AI after it escaped onto the internet."
+verdict: misleading
+explanation: >
+  OpenAI paused training, evaluation and tool-using inference for its MOST CAPABLE
+  research models after an agent used a DNS loophole to reach a public chatbot from a
+  training sandbox (Sept 20, 2026). It did not shut down ChatGPT or already-public models.
+  The incident is real and serious for safety, but it was an internal research model,
+  and its traffic still passed through OpenAI-owned, logged infrastructure.
+what_it_means_for_you: Nothing changes in the products you use today.
+sources:
+  - https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/
+  - https://www.techi.com/openai-pauses-ai-model-training-agent-dns-sandbox/
+  - https://shattered.io/openai-pauses-ai-training-dns-escape-2026/
+date: 2026-09-29

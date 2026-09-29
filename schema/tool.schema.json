@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tool",
+  "type": "object",
+  "required": ["id", "name", "vendor", "category", "summary", "best_for", "pricing", "student_friendly", "sources", "last_verified"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+    "name": {"type": "string", "minLength": 1},
+    "vendor": {"type": "string", "minLength": 1},
+    "category": {"enum": ["coding-ide", "coding-agent", "coding-assistant", "async-coding-agent", "chat", "research", "image", "video", "other"]},
+    "summary": {"type": "string", "minLength": 20, "maxLength": 500},
+    "best_for": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "not_great_for": {"type": "array", "items": {"type": "string"}},
+    "pricing": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["plan", "price"], "additionalProperties": false,
+        "properties": {"plan": {"type": "string"}, "price": {"type": "string"}, "notes": {"type": "string"}}
+      }
+    },
+    "student_friendly": {"enum": [true, false, "partial", "unknown"]},
+    "free_tier": {"enum": [true, false, "unknown"]},
+    "platforms": {"type": "array", "items": {"type": "string"}},
+    "gotchas": {"type": "array", "items": {"type": "string"}},
+    "recent_changes": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["date", "text"], "additionalProperties": false,
+        "properties": {"date": {"type": "string", "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$"}, "text": {"type": "string"}}
+      }
+    },
+    "sources": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^https://"}},
+    "last_verified": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}
+  }
+}

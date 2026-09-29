@@ -1,0 +1,33 @@
+id: claude-code
+name: Claude Code
+vendor: Anthropic
+category: coding-agent
+summary: >
+  Anthropic's agentic coding tool for the terminal and IDEs (VS Code, Cursor and other
+  VS Code forks, JetBrains). Included with Claude Pro and Max subscriptions.
+best_for:
+  - Long, multi-step coding tasks driven from the terminal
+  - Planning architecture and explaining unfamiliar codebases
+  - Using one subscription for both chat (claude.ai) and coding
+not_great_for:
+  - Heavy all-day agent use on the Pro plan (usage limits are shared with claude.ai)
+pricing:
+  - plan: Pro
+    price: See claude.com/pricing
+    notes: Claude Code included; usage shared with Claude web, desktop and mobile apps.
+  - plan: Max
+    price: See claude.com/pricing
+    notes: Higher usage limits.
+student_friendly: partial
+free_tier: false
+platforms: [macOS, Windows, Linux, VS Code, JetBrains]
+gotchas:
+  - If ANTHROPIC_API_KEY is set in your environment, Claude Code bills the API instead of your subscription.
+recent_changes:
+  - date: 2026-09
+    text: Claude Opus 5.5 released; Anthropic reports Fable 5.1-level performance on much of its workload at 40% lower cost than Opus 5.
+sources:
+  - https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan
+  - https://www.anthropic.com/news
+  - https://imfounder.com/science-tech/ai/ai-updates-this-week-september-2026/
+last_verified: 2026-09-29

@@ -1,0 +1,11 @@
+id: cursor-owned-by-spacex
+claim: "Cursor is now owned by SpaceX."
+verdict: "true"   # quote true/false so YAML keeps them as text
+explanation: >
+  SpaceX exercised its option to buy Anysphere (Cursor's parent) in an all-stock deal;
+  the acquisition closed on August 14, 2026. Cursor continues to ship as a product.
+what_it_means_for_you: No change to how you use Cursor today; watch the pricing page for changes.
+sources:
+  - https://en.wikipedia.org/wiki/Cursor_(company)
+  - https://cursor.com/blog
+date: 2026-09-29

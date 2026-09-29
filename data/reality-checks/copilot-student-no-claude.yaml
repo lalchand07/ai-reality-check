@@ -1,0 +1,15 @@
+id: copilot-student-no-claude
+claim: "Copilot Student users can't use any Claude or GPT-5 models anymore."
+verdict: partly-true
+explanation: >
+  Since March 2026, Claude Opus/Sonnet and GPT-5.4 can't be SELECTED manually on the
+  Student plan, and since June 24, 2026 Auto is the only option. GitHub says Auto still
+  routes to models from OpenAI, Anthropic and Google, subject to plan limits. You just
+  don't get to choose which one.
+what_it_means_for_you: >
+  Treat Copilot Student as free autocomplete + light chat. If you need a specific frontier
+  model, use a tool where you pick the model.
+sources:
+  - https://github.com/orgs/community/discussions/189268
+  - https://github.blog/changelog/2026-06-24-changes-to-model-selection-for-free-and-student-plans/
+date: 2026-09-29

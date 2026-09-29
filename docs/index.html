@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Reality Check: which AI tool, what changed, what's true</title>
+<meta name="description" content="Plain, source-backed answers about AI coding tools: which to use, what changed this week, and which viral claims are true.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #e9eef3;
+  --sheet: #f7f9fb;
+  --ink: #16233b;
+  --muted: #56657c;
+  --rule: #c9d3df;
+  --focus: #2f5bd3;
+  --v-true: #0e7c6b;
+  --v-partly: #9a5b00;
+  --v-misleading: #b24a00;
+  --v-false: #b3261e;
+  --v-unproven: #5c5f8a;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1726; --sheet: #16213a; --ink: #e4ebf5; --muted: #9fb0c8; --rule: #2a3a58;
+    --focus: #8fb0ff; --v-true: #4fc3ad; --v-partly: #e0a33c; --v-misleading: #f08a4b;
+    --v-false: #ff7a70; --v-unproven: #a9acdf;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1726; --sheet: #16213a; --ink: #e4ebf5; --muted: #9fb0c8; --rule: #2a3a58;
+  --focus: #8fb0ff; --v-true: #4fc3ad; --v-partly: #e0a33c; --v-misleading: #f08a4b;
+  --v-false: #ff7a70; --v-unproven: #a9acdf;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 1.0625rem/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
+
+header.top { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; gap: 1rem; }
+.brand { font: 800 1.15rem/1 var(--display); text-decoration: none; }
+.top nav { display: flex; gap: 1.25rem; font-size: .95rem; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--ink); text-decoration: underline; }
+
+/* ---------- Picker (hero) ---------- */
+.picker { padding: 3rem 0 3.5rem; }
+.picker h1 {
+  font: 800 clamp(2.2rem, 6vw, 4.2rem)/1.02 var(--display);
+  letter-spacing: -.025em; margin: 0 0 1rem; max-width: 16ch;
+}
+.picker .lede { color: var(--muted); max-width: 52ch; margin: 0 0 2.25rem; }
+.q { border: 0; padding: 0; margin: 0 0 1.5rem; }
+.q legend { font: 500 1.1rem/1.3 var(--display); margin-bottom: .75rem; }
+.choices { display: flex; flex-wrap: wrap; gap: .5rem; }
+.choices input { position: absolute; opacity: 0; pointer-events: none; }
+.choices label {
+  cursor: pointer; padding: .6rem 1rem; border: 2px solid var(--rule); border-radius: 999px;
+  background: var(--sheet); font-size: .98rem; transition: border-color .15s, background .15s;
+}
+.choices label:hover { border-color: var(--muted); }
+.choices input:checked + label { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.choices input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.results { margin-top: 2rem; display: grid; gap: 1rem; }
+.result {
+  background: var(--sheet); border: 1px solid var(--rule); border-left: 6px solid var(--ink);
+  padding: 1.25rem 1.4rem; border-radius: 2px 10px 10px 2px;
+}
+.result.secondary { border-left-color: var(--rule); }
+.result h3 { font: 800 1.35rem/1.2 var(--display); margin: 0 0 .15rem; }
+.result .vendor { color: var(--muted); font-size: .9rem; margin: 0 0 .6rem; }
+.result p { margin: .35rem 0; max-width: 68ch; }
+.result .why { font-weight: 700; }
+.result .gotcha { color: var(--v-misleading); }
+.result .meta { font-size: .88rem; color: var(--muted); margin-top: .75rem; }
+.empty { color: var(--muted); font-style: italic; }
+
+/* ---------- Sections ---------- */
+section.block { padding: 3rem 0; border-top: 1px solid var(--rule); }
+section.block h2 { font: 800 clamp(1.6rem, 3.5vw, 2.3rem)/1.1 var(--display); margin: 0 0 .4rem; letter-spacing: -.015em; }
+section.block .sub { color: var(--muted); margin: 0 0 2rem; max-width: 60ch; }
+
+/* Timeline: changes really are a dated sequence */
+.timeline { list-style: none; margin: 0; padding: 0 0 0 1.25rem; border-left: 2px solid var(--rule); }
+.timeline li { position: relative; padding: 0 0 1.6rem 1rem; max-width: 70ch; }
+.timeline li::before {
+  content: ""; position: absolute; left: -1.25rem; top: .45rem; transform: translateX(-6px);
+  width: 10px; height: 10px; border-radius: 50%; background: var(--paper); border: 2px solid var(--muted);
+}
+.timeline li[data-impact="high"]::before { background: var(--ink); border-color: var(--ink); }
+.timeline time { font-size: .88rem; color: var(--muted); display: block; }
+.timeline strong { display: block; font-size: 1.05rem; }
+.timeline p { margin: .2rem 0 0; }
+.timeline .src { font-size: .88rem; color: var(--muted); }
+
+/* Reality checks: the stamp is the memorable element */
+.checks { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+.check { background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 1.4rem; position: relative; overflow: hidden; }
+.check blockquote { margin: 0 0 1rem; font: 500 1.2rem/1.3 var(--display); padding-right: 6.5rem; }
+.stamp {
+  position: absolute; top: 1rem; right: .9rem; transform: rotate(8deg);
+  font: 800 .95rem/1 var(--display); padding: .45rem .6rem; border: 3px double currentColor;
+  border-radius: 6px; letter-spacing: .02em;
+}
+.stamp.true { color: var(--v-true); } .stamp.partly-true { color: var(--v-partly); }
+.stamp.misleading { color: var(--v-misleading); } .stamp.false { color: var(--v-false); }
+.stamp.unproven { color: var(--v-unproven); }
+.check p { margin: .4rem 0; }
+.check .src { font-size: .88rem; color: var(--muted); }
+
+footer { border-top: 1px solid var(--rule); padding: 2rem 0 3rem; color: var(--muted); font-size: .92rem; }
+footer p { max-width: 70ch; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .stamp { animation: thump .35s ease-out both; }
+  @keyframes thump { from { transform: rotate(8deg) scale(1.6); opacity: 0; } to { transform: rotate(8deg) scale(1); opacity: 1; } }
+}
+@media (max-width: 560px) {
+  .top nav { display: none; }
+  .check blockquote { padding-right: 0; padding-top: 2.4rem; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">🧭 AI Reality Check</a>
+    <nav aria-label="Sections">
+      <a href="#changes">What changed</a>
+      <a href="#checks">Reality checks</a>
+      <a href="https://github.com/lalchand07/ai-reality-check">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="picker" aria-labelledby="pick-title">
+      <h1 id="pick-title">Which AI coding tool should you actually use?</h1>
+      <p class="lede">Answer two questions. Every recommendation links to its sources and shows when it was last checked.</p>
+
+      <form id="picker" onsubmit="return false">
+        <fieldset class="q">
+          <legend>What do you want help with?</legend>
+          <div class="choices">
+            <input type="radio" name="task" id="t-edit" value="edit" checked><label for="t-edit">Writing code in my editor</label>
+            <input type="radio" name="task" id="t-agent" value="agent"><label for="t-agent">Handing off a whole task</label>
+            <input type="radio" name="task" id="t-chores" value="chores"><label for="t-chores">Background chores like tests and docs</label>
+          </div>
+        </fieldset>
+        <fieldset class="q">
+          <legend>What's your budget?</legend>
+          <div class="choices">
+            <input type="radio" name="budget" id="b-free" value="free" checked><label for="b-free">Free / student</label>
+            <input type="radio" name="budget" id="b-20" value="paid"><label for="b-20">Around $20 a month</label>
+            <input type="radio" name="budget" id="b-have" value="have"><label for="b-have">I already pay for Claude or Google AI</label>
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="results" id="results" aria-live="polite"></div>
+    </section>
+
+    <section class="block" id="changes" aria-labelledby="changes-title">
+      <h2 id="changes-title">What changed recently</h2>
+      <p class="sub">Pricing, limits, models and incidents, newest first. Filled darker dots mark high-impact changes.</p>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <section class="block" id="checks" aria-labelledby="checks-title">
+      <h2 id="checks-title">Reality checks</h2>
+      <p class="sub">Claims going around online, checked against at least two sources.</p>
+      <div class="checks" id="checklist"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Independent and community-maintained. Not affiliated with any company listed. Prices and limits change often, so confirm on the official page before you buy.</p>
+    <p>Spot something wrong? <a href="https://github.com/lalchand07/ai-reality-check/issues/new?template=report-change.yml">Report a change</a>. Data is CC BY 4.0, code is MIT.</p>
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  const data = window.ARC_DATA;
+  const $ = (id) => document.getElementById(id);
+  if (!data) {
+    $("results").innerHTML = '<p class="empty">Data file missing. Run <code>make build</code> to generate docs/data.js.</p>';
+    return;
+  }
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
+  const srcLinks = (list, n) => list.slice(0, n).map((u) => `<a href="${esc(u)}" rel="noopener">${esc(host(u))}</a>`).join(", ");
+
+  const TASKS = {
+    edit: ["coding-ide", "coding-assistant"],
+    agent: ["coding-agent", "coding-ide"],
+    chores: ["async-coding-agent", "coding-agent"],
+  };
+  const SUBSCRIPTION_TOOLS = ["claude-code", "google-antigravity", "jules"];
+
+  function score(tool, task, budget) {
+    const cats = TASKS[task];
+    const idx = cats.indexOf(tool.category);
+    if (idx === -1) return -1;
+    let s = 10 - idx * 3;
+    if (budget === "free") {
+      if (tool.student_friendly === true) s += 4;
+      else if (tool.free_tier === true) s += 2;
+      else s -= 6;
+    } else if (budget === "have") {
+      s += SUBSCRIPTION_TOOLS.includes(tool.id) ? 5 : -2;
+    } else {
+      s += tool.free_tier === true ? 0 : 1;
+    }
+    return s;
+  }
+
+  function renderPicker() {
+    const f = new FormData($("picker"));
+    const task = f.get("task"), budget = f.get("budget");
+    const ranked = data.tools
+      .map((t) => ({ t, s: score(t, task, budget) }))
+      .filter((x) => x.s > 0)
+      .sort((a, b) => b.s - a.s)
+      .slice(0, 3);
+    if (!ranked.length) {
+      $("results").innerHTML = '<p class="empty">No tracked tool fits this combination yet. Suggest one on GitHub.</p>';
+      return;
+    }
+    $("results").innerHTML = ranked.map(({ t }, i) => `
+      <article class="result${i ? " secondary" : ""}">
+        <h3>${i === 0 ? "Start with " : ""}${esc(t.name)}</h3>
+        <p class="vendor">${esc(t.vendor)}</p>
+        <p class="why">Best for: ${esc(t.best_for[0])}</p>
+        <p>${esc(t.summary)}</p>
+        <p>Plans: ${t.pricing.map((p) => `${esc(p.plan)} (${esc(p.price)})`).join(", ")}</p>
+        ${(t.gotchas || []).slice(0, 1).map((g) => `<p class="gotcha">Watch out: ${esc(g)}</p>`).join("")}
+        ${(t.not_great_for || []).length ? `<p>Not great for: ${esc(t.not_great_for[0])}</p>` : ""}
+        <p class="meta">Checked ${esc(t.last_verified)}. Sources: ${srcLinks(t.sources, 2)}</p>
+      </article>`).join("");
+  }
+
+  function renderTimeline() {
+    $("timeline").innerHTML = data.changes.slice(0, 12).map((c) => `
+      <li data-impact="${esc(c.impact)}">
+        <time datetime="${esc(c.date)}">${esc(c.date)}</time>
+        <strong>${esc(c.title)}</strong>
+        <p>${esc(c.summary)}</p>
+        <span class="src">Source: ${srcLinks(c.sources, 1)}</span>
+      </li>`).join("");
+  }
+
+  const VERDICT = { "true": "True", "partly-true": "Partly true", "misleading": "Misleading", "false": "False", "unproven": "Unproven" };
+  function renderChecks() {
+    $("checklist").innerHTML = data.checks.map((c) => `
+      <article class="check">
+        <span class="stamp ${esc(c.verdict)}">${VERDICT[c.verdict] || esc(c.verdict)}</span>
+        <blockquote>“${esc(c.claim)}”</blockquote>
+        <p>${esc(c.explanation)}</p>
+        ${c.what_it_means_for_you ? `<p><strong>For you:</strong> ${esc(c.what_it_means_for_you)}</p>` : ""}
+        <p class="src">Checked ${esc(c.date)}. Sources: ${srcLinks(c.sources, 3)}</p>
+      </article>`).join("");
+  }
+
+  $("picker").addEventListener("change", renderPicker);
+  renderPicker(); renderTimeline(); renderChecks();
+})();
+</script>
+</body>
+</html>

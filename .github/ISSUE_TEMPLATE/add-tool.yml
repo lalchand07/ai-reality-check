@@ -1,0 +1,22 @@
+name: Suggest a tool
+description: A tool that should be tracked here
+title: "[tool] "
+labels: [new-tool]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Tool name and official website
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What is it best for, and who would use it?
+    validations:
+      required: true
+  - type: input
+    id: pricing
+    attributes:
+      label: Pricing page link
+      placeholder: https://

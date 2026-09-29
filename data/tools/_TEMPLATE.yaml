@@ -1,0 +1,24 @@
+# Copy this file to data/tools/<id>.yaml and fill it in.
+# Every factual claim must be backed by at least one link in `sources`.
+id: my-tool                 # lowercase, hyphens, must match the file name
+name: My Tool
+vendor: Company name
+category: coding-assistant  # coding-ide | coding-agent | coding-assistant | async-coding-agent | chat | research | image | video | other
+summary: >
+  One or two plain-language sentences. What is it, who is it for.
+best_for:
+  - Concrete use case
+not_great_for:
+  - Honest limitation
+pricing:
+  - plan: Free
+    price: Free
+    notes: What you actually get
+student_friendly: unknown   # true | false | partial | unknown
+free_tier: unknown          # true | false | unknown
+platforms: []
+gotchas: []                 # surprising things that trip people up
+recent_changes: []          # - date: YYYY-MM-DD  text: what changed
+sources:
+  - https://official-page.example.com
+last_verified: 2026-01-01

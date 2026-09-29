@@ -1,0 +1,19 @@
+name: Suggest a reality check
+description: A viral or confusing claim about AI that should be fact-checked
+title: "[check] "
+labels: [reality-check]
+body:
+  - type: textarea
+    id: claim
+    attributes:
+      label: The claim, as people are saying it
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Where did you see it? (links)
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Any evidence for or against? (links)

@@ -1,0 +1,25 @@
+id: jules
+name: Jules
+vendor: Google
+category: async-coding-agent
+summary: >
+  An asynchronous coding agent (beta) that works on tasks in the background against
+  your GitHub repo while you do other things.
+best_for:
+  - "Background grunt work: tests, docs, dependency bumps, small bug fixes"
+  - Google AI Pro/Ultra subscribers (higher task and concurrency limits)
+not_great_for:
+  - Interactive pair-programming
+  - Users under 18 (age requirement)
+pricing:
+  - plan: Google AI Pro / Ultra
+    price: See one.google.com
+    notes: Higher task and concurrency limits and access to latest models.
+student_friendly: partial
+free_tier: unknown
+platforms: [Web, GitHub]
+recent_changes: []
+sources:
+  - https://gemini.google/subscriptions/
+  - https://one.google.com/about/google-ai-plans/
+last_verified: 2026-09-29

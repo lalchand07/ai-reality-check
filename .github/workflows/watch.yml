@@ -1,0 +1,44 @@
+name: Watch official sources
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # daily 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Check sources
+        id: watch
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # optional
+        run: python -m scripts.watch
+      - name: Open PR with drafts
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: bot/source-changes
+          delete-branch: true
+          commit-message: "bot: record source snapshots and draft changes"
+          title: "🤖 Possible changes detected: ${{ steps.watch.outputs.changed || 'snapshots only' }}"
+          body: |
+            The watcher found new text on official pages.
+
+            **Before merging:** open each draft in `data/changelog/_drafts/`, verify it against
+            the source, move real changes into `data/changelog/YYYY-MM.yaml`, and delete the draft.
+            See CONTRIBUTING.md → "Reviewing bot drafts".
+          labels: bot, needs-verification

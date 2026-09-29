@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reality check",
+  "type": "object",
+  "required": ["id", "claim", "verdict", "explanation", "sources", "date"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+    "claim": {"type": "string"},
+    "verdict": {"enum": ["true", "partly-true", "misleading", "false", "unproven"]},
+    "explanation": {"type": "string", "minLength": 40},
+    "what_it_means_for_you": {"type": "string"},
+    "sources": {"type": "array", "minItems": 2, "items": {"type": "string", "pattern": "^https://"}},
+    "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}
+  }
+}
