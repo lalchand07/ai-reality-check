@@ -1,7 +1,15 @@
-Ecosystem & accessibility
-Enterprise management tools
+# Draft: possible change on `copilot-changelog`
+- Tool: `github-copilot`
+- Source: https://github.blog/changelog/
+- Detected: 2026-10-03
+- Status: **needs human verification**
+
+## AI draft summary (verify before using)
+_No AI summary (no API key configured)._
+
+## New text on the page
+```text
 Stateless GitHub App installation tokens rolled out
-ecosystem & accessibility
 Copilot code review: API support and new default effort level
 Selected models in GitHub Copilot deprecated
 New fields for SecurityAdvisory GraphQL API
@@ -23,8 +31,4 @@ Dynamic workflows in Copilot CLI and the Copilot app
 New dashboard experience now the default
 GitHub async merge API generally available
 Actions Runner Controller release 0.15.0
-Subscribe to our developer newsletter
-Discover tips, technical guides, and best practices in our biweekly newsletter just for devs.
-By submitting, I agree to let GitHub and its affiliates use my information for personalized communications, targeted advertising, and campaign effectiveness. See the GitHub Privacy Statement for more details.
-Do not share my personal information
-GitHub’s organization on GitHub
+```
