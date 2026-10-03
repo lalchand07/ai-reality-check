@@ -44,6 +44,7 @@ Custom visuals in chat and Cowork
 Available beta and research preview features
 Get started with Claude Science
 Set up Salesforce in Claude for your organization
+Use Claude in Google Docs, Sheets, and Slides
 Personalization and settings
 Understanding Claude's personalization features
 Customizing your appearance settings
