@@ -1,0 +1,34 @@
+# Draft: possible change on `cursor-changelog`
+- Tool: `cursor`
+- Source: https://cursor.com/changelog
+- Detected: 2026-10-10
+- Status: **needs human verification**
+
+## AI draft summary (verify before using)
+_No AI summary (no API key configured)._
+
+## New text on the page
+```text
+Remote control for local agents
+You can now see and reply to the local agents running on your computer from the Cursor iOS app.
+Remote Control is on by default for everyone except Enterprise organizations.
+Download the Cursor iOS app and sign in. Computers on your account appear in the app automatically. Tap your computer in the app and approve your pairing request in the Cursor desktop app. Your local agents appear in a list. Tap one to see what it's doing or send it a message.
+# Agents keep running on your computer
+Remote control doesn't move your agents anywhere. It keeps running on your computer, and the app connects to it. Your computer needs to stay on and online for remote control to work.
+# Keep your computer awake
+To stop your computer from sleeping while you're away, turn on "Keep this computer awake" under Remote Control in Cursor's desktop settings. Your computer needs to be plugged in with the lid open.
+Remote control is on by default, except for Enterprise organizations. Enterprise admins can turn it on in Org settings > Security and identity > Remote control.
+Remote control doesn't require cloud agents to work.
+Remote control is available today in the Cursor iOS app .
+Remote control for local agents
+You can now see and reply to the local agents running on your computer from the Cursor iOS app.
+Remote Control is on by default for everyone except Enterprise organizations.
+Download the Cursor iOS app and sign in. Computers on your account appear in the app automatically. Tap your computer in the app and approve your pairing request in the Cursor desktop app. Your local agents appear in a list. Tap one to see what it's doing or send it a message.
+# Agents keep running on your computer
+Remote control doesn't move your agents anywhere. It keeps running on your computer, and the app connects to it. Your computer needs to stay on and online for remote control to work.
+# Keep your computer awake
+To stop your computer from sleeping while you're away, turn on "Keep this computer awake" under Remote Control in Cursor's desktop settings. Your computer needs to be plugged in with the lid open.
+Remote control is on by default, except for Enterprise organizations. Enterprise admins can turn it on in Org settings > Security and identity > Remote control.
+Remote control doesn't require cloud agents to work.
+Remote control is available today in the Cursor iOS app .
+```

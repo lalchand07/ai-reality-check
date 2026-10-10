@@ -1,5 +1,14 @@
-Ecosystem & accessibility
-Enterprise management tools
+# Draft: possible change on `copilot-changelog`
+- Tool: `github-copilot`
+- Source: https://github.blog/changelog/
+- Detected: 2026-10-10
+- Status: **needs human verification**
+
+## AI draft summary (verify before using)
+_No AI summary (no API key configured)._
+
+## New text on the page
+```text
 GitHub Copilot weekly releases — October 5
 CodeQL 2.27.2 improves C++, Go, Rust, and JavaScript analysis
 Copilot code review: New organization billing options and controls
@@ -12,12 +21,10 @@ Purpose-built model for leaked secret detection
 Local sandboxing for GitHub Copilot now generally available
 Discover local models in GitHub Copilot CLI
 Update your IDE to restore agent activity in Copilot usage metrics
-enterprise management tools
 Stacked pull requests generally available
 Code scanning AI Scan enablement status in security overview
 Secret scanning adds detectors for Lovable, Supabase, and more
 Stateless GitHub App installation tokens rolled out
-ecosystem & accessibility
 Copilot code review: API support and new default effort level
 Unvalidated npm trusted publishing configurations now expire
 npm staged publishing now supports creating new packages
@@ -42,8 +49,4 @@ Dynamic workflows in Copilot CLI and the Copilot app
 New dashboard experience now the default
 GitHub async merge API generally available
 Actions Runner Controller release 0.15.0
-Subscribe to our developer newsletter
-Discover tips, technical guides, and best practices in our biweekly newsletter just for devs.
-By submitting, I agree to let GitHub and its affiliates use my information for personalized communications, targeted advertising, and campaign effectiveness. See the GitHub Privacy Statement for more details.
-Do not share my personal information
-GitHub’s organization on GitHub
+```
