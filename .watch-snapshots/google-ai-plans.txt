@@ -96,7 +96,7 @@ YouTube Premium individual (videos and music ad-free, offline, and in the backgr
 Google Home Premium Advanced 10
 More benefits across Google
 Digital spend estimates, including per-user cost, are for illustrative purposes only and are based solely on your self-reported inputs. Actual costs, individual feature eligibility, usage capacity, and savings may vary depending on your specific subscriptions, regional availability, and plan terms. Offers and pricing are subject to change.
-Looking for AI solutions for your business or work account? Try Gemini Enterprise app
+Looking for AI solutions for your business or work account? Try Gemini Enterprise
 Students get more with Google AI
 Try Google AI Pro free for 1 year including 4x higher usage limits in Gemini, a 24/7 personal AI agent and 5 TB of cloud storage. Or, enjoy YouTube and YouTube Music ad-free, offline, and in the background with our discounted student bundle. 13
 Availability varies by country – see full list of countries and regions where Google AI Pro and YouTube Premium are supported.
@@ -178,6 +178,7 @@ Requires the Google Health app and a Pixel Watch or Fitbit device (sold separate
 Be among the first to explore Google’s latest AI innovations
 infinitely diverse worlds
 Your music production partner
+Create custom games in minutes (US only)
 Find the right Google AI plan for you
 Storage for Gmail, Google Drive, Google Photos
 Family sharing with up to 5 people
@@ -205,6 +206,7 @@ Google Developer Program premium
 Access limits to our best Gemini models for agentic AI-assistance
 Photo-to-video generations
 Access to interactive world model
+Access to game generations to build & play custom games (US only)
 Premium video calling features in Google Meet
 Enhanced appointment scheduling in Google Calendar
 YouTube Premium Lite plan included
