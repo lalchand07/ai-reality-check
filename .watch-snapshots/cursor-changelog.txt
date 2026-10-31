@@ -1,4 +1,47 @@
 Sign in Contact Contact sales Download
+The Agent SDK is available today. It allows you to define an agent as a folder of code, test it with evals, and deploy it to Cursor or your own infrastructure.
+Run npx @cursor/agent-sdk init ./my-bot , then agent-sdk dev to start the bot locally with a playground. Pass --template to start from a security reviewer, an owners-policy approver, a PR autofixer, or a Linear or Jira triager.
+# Deploy agents wherever you need them
+When you're ready to put an agent into use, you can deploy it to Cursor by running agent-sdk deploy from the project directory. The command builds the agent, gives it a URL, and starts it on our infrastructure. You can manage secrets and integrations from the dashboard, while continuing to use the same logs, evals, and playground available locally.
+An agent is a project. instructions.md is the prompt. Each file in tools/ is one typed action the model can call. skills/ holds procedures the model loads on demand, mcp-connections/ adds tools from MCP servers, and channels/ defines where the bot receives and answers messages. agent-sdk validate checks the project and agent-sdk info prints what was discovered.
+Agents wake on pull request, comment, and CI events from GitHub, GitLab, and Bitbucket; on mentions and DMs in Slack; on webhooks from any provider; and on a cron schedule. GitHub events pull through your Cursor account, so no public webhook URL is required. Slack is well-supported out of the box.
+Each conversation keeps its own session and a complete record of every message and tool call. Follow-ups on a pull request or Slack thread resume the same session.
+An eval sends a fixed message to the bot and asserts on what it did: which tools ran, with what input, and the shape of the reply. Run agent-sdk eval locally or in CI.
+agent-sdk github replay <pr-url> turns a real pull request into signed webhook payloads and sends them to the bot, so GitHub-driven bots can be tested without waiting for a push. Add --dry-run --fixtures-dir fixtures/ to save the payloads as eval fixtures.
+The Agent SDK is generally available today. Read the docs and get started.
+Cloud Agent Canvases and Environment Improvements
+# Canvases from cloud agents
+Cloud agents can now build interactive canvases as part of their work. Share a finished canvas with your team by sending its link.
+Learn more about sharing canvases .
+The Environments API is now available in beta. Use it to programmatically create and manage the cloud environments your agents run in.
+# Larger, faster environments
+Cloud agent environments now support up to 300 repositories. Large environments also load 5x faster.
+Origin now integrates with over 20 apps for deployments, CI, code review, security, monitoring, and project management, from partners including Cloudflare, Linear, Sentry, and Socket Security.
+Starting today, the marketplace is also open to public submissions, so any team building developer tools can publish an app for Origin.
+The marketplace now includes apps for:
+Deployments: Cloudflare , Netlify , Render , Spacelift , and Vercel
+CI: Buildkite , CircleCI , CloudBees , Depot , EngFlow , Namespace , and RWX
+Code review: CodeRabbit , Greptile , and Tenki
+Security: Artemis Security , Semgrep , Socket Security , and Upwind
+Project management: Linear
+Create an app in your namespace. It stays private to your namespace while you build.
+Build against the Origin API . Apps authenticate with an app JWT and installation access tokens, receive webhook events, and write back check runs, pull request comments, and reviews.
+Make the app public, then submit it from the app's page with a slug, suggested tags, and a demo video. The video should show install, uninstall, and your core product flows.
+We review the submission and list the app once it's approved.
+Try the apps in the Origin App Marketplace today.
+Want to build an Origin app? Start with the publishing guide and the Origin API reference .
+The Origin Apps plugin can also answer questions from the live Origin API docs and plan a port to Origin for an app you already run.
+Remote control for local agents
+You can now see and reply to the local agents running on your computer from the Cursor iOS app.
+Remote Control is on by default for everyone except Enterprise organizations.
+Download the Cursor iOS app and sign in. Computers on your account appear in the app automatically. Tap your computer in the app and approve your pairing request in the Cursor desktop app. Your local agents appear in a list. Tap one to see what it's doing or send it a message.
+# Agents keep running on your computer
+Remote control doesn't move your agents anywhere. It keeps running on your computer, and the app connects to it. Your computer needs to stay on and online for remote control to work.
+# Keep your computer awake
+To stop your computer from sleeping while you're away, turn on "Keep this computer awake" under Remote Control in Cursor's desktop settings. Your computer needs to be plugged in with the lid open.
+Remote control is on by default, except for Enterprise organizations. Enterprise admins can turn it on in Org settings > Security and identity > Remote control.
+Remote control doesn't require cloud agents to work.
+Remote control is available today in the Cursor iOS app .
 Rollouts and Security Review
 Today we're launching two Cursor bots for the last mile of shipping code. Rollouts watches every change as it deploys and reports its health per environment. Security Review reports exploitable bugs on every pull request.
 Both are available today on Teams and Enterprise plans.
@@ -15,48 +58,52 @@ Each finding carries a severity, the attack path, and a proposed fix. Dismiss on
 Add rules for your codebase, such as which client external calls must go through or which tables are never queried from a request handler, and Security Review enforces them on every PR.
 Rollouts and Security Reviewer are available today on Teams and Enterprise plans. Enable either bot from the automations tab.
 For the next 10 days, we're including usage credits so teams can try Rollouts on real changes. Teams and Enterprise customers receive credits for roughly 50 and 500 changes, respectively.
-Today we're launching Projects in Cursor. Projects lets you take on larger bodies of work, such as a feature, a migration, or a full app. It maintains context over months of work, delegates tasks to thousands of subagents, and performs recurring work without being prompted.
-Access Projects from the left-hand nav. The coordinator agent in a project doesn't write code itself; it plans the work, delegates it to agents that implement it, and brings the finished work back to you to check. Coordinators create and manage agents on your behalf, running as many in parallel as the work needs.
-# Powered by Cloud Agents
-A Project runs on its own computer in the cloud, so closing your laptop doesn't stop it. When something needs testing on your machine, the coordinator spins up a local agent to run it there.
-You shouldn't have to onboard an agent every time you start a task. Each Project maintains a set of files that sync across every cloud and local machine its agents use. Agents add research and artifacts, along with what they learn about the codebase and how you prefer work to be done. If one agent figures out how to test a service, for example, every future agent can use those instructions. The shared context grows with the Project, making the coordinator more effective over time.
-Tell the coordinator agent to watch a Slack channel, run on a schedule, or follow all your PRs. This way it can take action based on signals it detects, without waiting for your prompt.
-Connect Slack and point it at a bug-report channel, and it starts delegating each time a bug comes in.
-Projects are available in beta and rolling out to all users starting today.
-Cursor supports self-hosted machines , which let you keep tool execution entirely in your own network.
-Your codebase, build outputs, and secrets all stay on internal machines running in your infrastructure, while the agent handles tool calls locally.
-# Dynamic pool scheduling
-My Machines connects a single laptop or VM to your account for personal workflows.
-Team pools are named queues of workers for a team or enterprise. Capacity can grow as requests arrive and shrink when workers disconnect, so your self-hosted machines can scale with demand. Pools are not tied to one repository: name the pool, and any available worker can claim the request.
-Pools can also hibernate idle machines, then restore within a reconnect window when a follow-up arrives, so you don't keep expensive capacity warm just for the next prompt.
-Cloud agents can now execute on infrastructure you already use , including from AWS Lambda, Coder, Cloudflare, Daytona, Modal, Namespace, Vercel, and E2B.
-# Computer use on Linux and Mac
-Self-hosted workers now support computer use on Linux and Mac. With the right desktop packages, an agent can click, type, take screenshots, and drive the browser. You can watch its desktop or take control from Cursor.
-Start from scratch, without a repo
-Cloud Agents no longer require a connected GitHub or other third-party SCM provider to get started. Prompt from the get-go, then save your work to a Cursor Origin repo.
-Select Start from scratch in the repo picker, then prompt the agent. In the background, Cursor creates an Origin repo for you.
-# Turn it into a real repo, whenever you want
-Once the agent's build is to your liking, click the Create repo button to save your work in an Origin repo. Choose a custom name or pick one of the suggested ones, then set the visibility to private or internal. You'll get a fully scaffolded Origin repo, ready to share or keep building on. Navigate to the Codebase tab to find your repo and access your project.
-# A live preview, right in the browser
-Cursor now port-forwards your cloud agent's live environment straight to your browser, so you can preview it and use tools like design mode.
-Connect a Vercel account and hit publish to get a live URL for what you built.
-A Vercel account is required to use the publish feature.
-Cloud Agents and Cursor Harness Improvements
-We're continuing to improve cloud agents and the Cursor harness so always-on agents can operate as a system, building and shipping software on their own without the need for intervention at each loop.
-With this release, cloud agents can automatically pick up work in response to events, hold a goal until it's met, and stay on course through long-running sessions.
-Cursor can now monitor your PRs, watch a Slack thread, or run scheduled tasks. Cursor Agent subscribes to an event source (a thread or conversation) and wakes when something happens. Subscriptions are available for cloud agents only, for now.
-Cloud agents automatically subscribe to PRs they create and drive them to completion, fixing CI and addressing bot comments. In Slack, ask @cursor check back in an hour and keep going until that feedback is in .
-Use any skill as a Custom Mode: a skill that stays pinned in the chat. Custom modes keep agents focused on a skill - you can think about it like "always on" skills.
-From / , pick a skill and press ⌥⏎ (Mac) or Alt+Enter (Windows), or choose Use as Mode .
-# Subagents on their own machines
-Subagents can now run on their own virtual machines. Each gets an isolated copy of the project with clean context in its own cloud environment.
-Have subagents test the parent agent's changes in fresh environments or swarm independent fixes without collisions. Try run a swarm of subagents to test my app for bugs, each in its own environment .
-Use /goal to give the agent a long-lived objective to work towards until it's fully complete.
-Try /goal fix all flaky tests and make CI green in a new chat. Pair it with a custom mode to follow a playbook, or /loop for recurring check-ins.
-You can now send a message to steer the agent while it's working without interruption. Follow-ups wait for the next tool call instead of cutting the agent off mid-action.
-Type a follow-up and hit Send now, or press ⏎ twice.
+SpaceXSI Subscription Terms ↗
 © 2026 Anysphere, Inc. 🛡 SOC 2 | ISO27001 | ISO42001 | AIUC-1 Certified
 Sign in Contact Contact sales Download
+The Agent SDK is available today. It allows you to define an agent as a folder of code, test it with evals, and deploy it to Cursor or your own infrastructure.
+Run npx @cursor/agent-sdk init ./my-bot , then agent-sdk dev to start the bot locally with a playground. Pass --template to start from a security reviewer, an owners-policy approver, a PR autofixer, or a Linear or Jira triager.
+# Deploy agents wherever you need them
+When you're ready to put an agent into use, you can deploy it to Cursor by running agent-sdk deploy from the project directory. The command builds the agent, gives it a URL, and starts it on our infrastructure. You can manage secrets and integrations from the dashboard, while continuing to use the same logs, evals, and playground available locally.
+An agent is a project. instructions.md is the prompt. Each file in tools/ is one typed action the model can call. skills/ holds procedures the model loads on demand, mcp-connections/ adds tools from MCP servers, and channels/ defines where the bot receives and answers messages. agent-sdk validate checks the project and agent-sdk info prints what was discovered.
+Agents wake on pull request, comment, and CI events from GitHub, GitLab, and Bitbucket; on mentions and DMs in Slack; on webhooks from any provider; and on a cron schedule. GitHub events pull through your Cursor account, so no public webhook URL is required. Slack is well-supported out of the box.
+Each conversation keeps its own session and a complete record of every message and tool call. Follow-ups on a pull request or Slack thread resume the same session.
+An eval sends a fixed message to the bot and asserts on what it did: which tools ran, with what input, and the shape of the reply. Run agent-sdk eval locally or in CI.
+agent-sdk github replay <pr-url> turns a real pull request into signed webhook payloads and sends them to the bot, so GitHub-driven bots can be tested without waiting for a push. Add --dry-run --fixtures-dir fixtures/ to save the payloads as eval fixtures.
+The Agent SDK is generally available today. Read the docs and get started.
+Cloud Agent Canvases and Environment Improvements
+# Canvases from cloud agents
+Cloud agents can now build interactive canvases as part of their work. Share a finished canvas with your team by sending its link.
+Learn more about sharing canvases .
+The Environments API is now available in beta. Use it to programmatically create and manage the cloud environments your agents run in.
+# Larger, faster environments
+Cloud agent environments now support up to 300 repositories. Large environments also load 5x faster.
+Origin now integrates with over 20 apps for deployments, CI, code review, security, monitoring, and project management, from partners including Cloudflare, Linear, Sentry, and Socket Security.
+Starting today, the marketplace is also open to public submissions, so any team building developer tools can publish an app for Origin.
+The marketplace now includes apps for:
+Deployments: Cloudflare , Netlify , Render , Spacelift , and Vercel
+CI: Buildkite , CircleCI , CloudBees , Depot , EngFlow , Namespace , and RWX
+Code review: CodeRabbit , Greptile , and Tenki
+Security: Artemis Security , Semgrep , Socket Security , and Upwind
+Project management: Linear
+Create an app in your namespace. It stays private to your namespace while you build.
+Build against the Origin API . Apps authenticate with an app JWT and installation access tokens, receive webhook events, and write back check runs, pull request comments, and reviews.
+Make the app public, then submit it from the app's page with a slug, suggested tags, and a demo video. The video should show install, uninstall, and your core product flows.
+We review the submission and list the app once it's approved.
+Try the apps in the Origin App Marketplace today.
+Want to build an Origin app? Start with the publishing guide and the Origin API reference .
+The Origin Apps plugin can also answer questions from the live Origin API docs and plan a port to Origin for an app you already run.
+Remote control for local agents
+You can now see and reply to the local agents running on your computer from the Cursor iOS app.
+Remote Control is on by default for everyone except Enterprise organizations.
+Download the Cursor iOS app and sign in. Computers on your account appear in the app automatically. Tap your computer in the app and approve your pairing request in the Cursor desktop app. Your local agents appear in a list. Tap one to see what it's doing or send it a message.
+# Agents keep running on your computer
+Remote control doesn't move your agents anywhere. It keeps running on your computer, and the app connects to it. Your computer needs to stay on and online for remote control to work.
+# Keep your computer awake
+To stop your computer from sleeping while you're away, turn on "Keep this computer awake" under Remote Control in Cursor's desktop settings. Your computer needs to be plugged in with the lid open.
+Remote control is on by default, except for Enterprise organizations. Enterprise admins can turn it on in Org settings > Security and identity > Remote control.
+Remote control doesn't require cloud agents to work.
+Remote control is available today in the Cursor iOS app .
 Rollouts and Security Review
 Today we're launching two Cursor bots for the last mile of shipping code. Rollouts watches every change as it deploys and reports its health per environment. Security Review reports exploitable bugs on every pull request.
 Both are available today on Teams and Enterprise plans.
@@ -73,44 +120,5 @@ Each finding carries a severity, the attack path, and a proposed fix. Dismiss on
 Add rules for your codebase, such as which client external calls must go through or which tables are never queried from a request handler, and Security Review enforces them on every PR.
 Rollouts and Security Reviewer are available today on Teams and Enterprise plans. Enable either bot from the automations tab.
 For the next 10 days, we're including usage credits so teams can try Rollouts on real changes. Teams and Enterprise customers receive credits for roughly 50 and 500 changes, respectively.
-Today we're launching Projects in Cursor. Projects lets you take on larger bodies of work, such as a feature, a migration, or a full app. It maintains context over months of work, delegates tasks to thousands of subagents, and performs recurring work without being prompted.
-Access Projects from the left-hand nav. The coordinator agent in a project doesn't write code itself; it plans the work, delegates it to agents that implement it, and brings the finished work back to you to check. Coordinators create and manage agents on your behalf, running as many in parallel as the work needs.
-# Powered by Cloud Agents
-A Project runs on its own computer in the cloud, so closing your laptop doesn't stop it. When something needs testing on your machine, the coordinator spins up a local agent to run it there.
-You shouldn't have to onboard an agent every time you start a task. Each Project maintains a set of files that sync across every cloud and local machine its agents use. Agents add research and artifacts, along with what they learn about the codebase and how you prefer work to be done. If one agent figures out how to test a service, for example, every future agent can use those instructions. The shared context grows with the Project, making the coordinator more effective over time.
-Tell the coordinator agent to watch a Slack channel, run on a schedule, or follow all your PRs. This way it can take action based on signals it detects, without waiting for your prompt.
-Connect Slack and point it at a bug-report channel, and it starts delegating each time a bug comes in.
-Projects are available in beta and rolling out to all users starting today.
-Cursor supports self-hosted machines , which let you keep tool execution entirely in your own network.
-Your codebase, build outputs, and secrets all stay on internal machines running in your infrastructure, while the agent handles tool calls locally.
-# Dynamic pool scheduling
-My Machines connects a single laptop or VM to your account for personal workflows.
-Team pools are named queues of workers for a team or enterprise. Capacity can grow as requests arrive and shrink when workers disconnect, so your self-hosted machines can scale with demand. Pools are not tied to one repository: name the pool, and any available worker can claim the request.
-Pools can also hibernate idle machines, then restore within a reconnect window when a follow-up arrives, so you don't keep expensive capacity warm just for the next prompt.
-Cloud agents can now execute on infrastructure you already use , including from AWS Lambda, Coder, Cloudflare, Daytona, Modal, Namespace, Vercel, and E2B.
-# Computer use on Linux and Mac
-Self-hosted workers now support computer use on Linux and Mac. With the right desktop packages, an agent can click, type, take screenshots, and drive the browser. You can watch its desktop or take control from Cursor.
-Start from scratch, without a repo
-Cloud Agents no longer require a connected GitHub or other third-party SCM provider to get started. Prompt from the get-go, then save your work to a Cursor Origin repo.
-Select Start from scratch in the repo picker, then prompt the agent. In the background, Cursor creates an Origin repo for you.
-# Turn it into a real repo, whenever you want
-Once the agent's build is to your liking, click the Create repo button to save your work in an Origin repo. Choose a custom name or pick one of the suggested ones, then set the visibility to private or internal. You'll get a fully scaffolded Origin repo, ready to share or keep building on. Navigate to the Codebase tab to find your repo and access your project.
-# A live preview, right in the browser
-Cursor now port-forwards your cloud agent's live environment straight to your browser, so you can preview it and use tools like design mode.
-Connect a Vercel account and hit publish to get a live URL for what you built.
-A Vercel account is required to use the publish feature.
-Cloud Agents and Cursor Harness Improvements
-We're continuing to improve cloud agents and the Cursor harness so always-on agents can operate as a system, building and shipping software on their own without the need for intervention at each loop.
-With this release, cloud agents can automatically pick up work in response to events, hold a goal until it's met, and stay on course through long-running sessions.
-Cursor can now monitor your PRs, watch a Slack thread, or run scheduled tasks. Cursor Agent subscribes to an event source (a thread or conversation) and wakes when something happens. Subscriptions are available for cloud agents only, for now.
-Cloud agents automatically subscribe to PRs they create and drive them to completion, fixing CI and addressing bot comments. In Slack, ask @cursor check back in an hour and keep going until that feedback is in .
-Use any skill as a Custom Mode: a skill that stays pinned in the chat. Custom modes keep agents focused on a skill - you can think about it like "always on" skills.
-From / , pick a skill and press ⌥⏎ (Mac) or Alt+Enter (Windows), or choose Use as Mode .
-# Subagents on their own machines
-Subagents can now run on their own virtual machines. Each gets an isolated copy of the project with clean context in its own cloud environment.
-Have subagents test the parent agent's changes in fresh environments or swarm independent fixes without collisions. Try run a swarm of subagents to test my app for bugs, each in its own environment .
-Use /goal to give the agent a long-lived objective to work towards until it's fully complete.
-Try /goal fix all flaky tests and make CI green in a new chat. Pair it with a custom mode to follow a playbook, or /loop for recurring check-ins.
-You can now send a message to steer the agent while it's working without interruption. Follow-ups wait for the next tool call instead of cutting the agent off mid-action.
-Type a follow-up and hit Send now, or press ⏎ twice.
+SpaceXSI Subscription Terms ↗
 © 2026 Anysphere, Inc. 🛡 SOC 2 | ISO27001 | ISO42001 | AIUC-1 Certified

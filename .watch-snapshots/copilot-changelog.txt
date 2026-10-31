@@ -1,102 +1,139 @@
 Ecosystem & accessibility
 Enterprise management tools
-GPT-6.1 Sol in GitHub Copilot
-Self-hosted runner version enforcement date has moved
-Claude Sonnet 5.5 in GitHub Copilot
-Enterprise managed settings in-product validator
-enterprise management tools
-Usage metrics API adds pull request review stages
-enterprise management tools
-Private saved views for repository issues and “Relates to” issue relationship is generally available
-Changes to query results in the GitHub Actions API and UI
-Agentic autofix now uses Copilot Memory
-GitHub Copilot weekly releases — September 21
-Updates to GitHub Copilot for Slack and Microsoft Teams
-CodeQL 2.27.1 adds C and C++ query and Kotlin 2.4.20 support
-Default Enablement of Copilot features for Copilot Business and Enterprise
-enterprise management tools
-Require proof of presence for high-impact actions
-enterprise management tools
-Expired GitHub Actions artifacts no longer shown in UI and API
-More ways to request and configure Copilot code reviews
-Node 20 is no longer available in GitHub Actions
-Local sandboxing in the GitHub Copilot app
-OpenTelemetry in the GitHub Copilot app
-New features and improvements in Copilot for JetBrains
-Faster C++ code intelligence with whole codebase indexing
-Claude Opus 5.5 is now available in GitHub Copilot
-OpenAI’s GPT-6 Sol and GPT-6 Luna now available
-Security improvements for SSH
-Deprecation notice: All-platform CodeQL bundle
-Refreshed repository pull requests page generally available
-GitHub Enterprise adds credential inventory exports
-enterprise management tools
-Grok 4.7 is now available in GitHub Copilot
-Copilot code review: An improved review experience
-Manage the code coverage ruleset condition with the REST API
-GitHub Copilot weekly releases — September 14
-Upcoming deprecation of selected GitHub Copilot models in mid-October
-Stage-only npm tokens for safer automation
-Copilot impact dashboard now shows feature engagement
-enterprise management tools
-Agentic CLI customizations now in the usage metrics API
-enterprise management tools
-Ubuntu 26 generally available and latest migration
-Workflow execution protections in GitHub Actions generally available
-Automate SSO authorization for classic PATs and SSH keys
-enterprise management tools
-SCIM user responses now include a profileUrl attribute
-enterprise management tools
-Copilot budget increase requests are generally available
-Code scanning AI Scan no longer requires CodeQL default setup
-Enforce GitHub Advanced Security configurations
-GitHub Copilot suggests custom properties definitions
-SHA-1 in HTTPS on GitHub sunset
+Webhook IP ranges added to the Meta API
 ecosystem & accessibility
-Configure cost and quality in Copilot auto model selection
-Profiles now show your highest achievement badge tier
-Add VS Code Agents to Copilot usage metrics
+Route and orchestrate models with GitHub Copilot Fusion
 enterprise management tools
-Auto-resolution and analysis updates in Copilot code review
-GitHub Copilot weekly releases — September 7
-Refreshed repository pull requests page in public preview
-AI Scan for pull request APIs in public preview
-Control GitHub Actions cache access with cache-mode
-MAI-Code-1-Flash deprecated
-Xcode 27 runner image now runs on macOS 27
-npm extends recovery-code security holds to all accounts
-CodeQL 2.27.0 adds support for Linux ARM64
-Enterprise managed permissions for GitHub Copilot agent operations
+GitHub Copilot app, Universe releases
+GitHub Enterprise now includes access to GitHub Copilot
+Security extension for the GitHub Copilot app
+GitHub intelligence puts your code, context, and history to work
+Build shared workflows for your team with Copilot Automations
+Repository plugin defaults and enterprise plugin controls generally available
+GitHub Copilot in VS Code, Universe releases
+Generate and edit images directly in Copilot
+GitHub Copilot Fusion now supports selection of local models
+GitHub Agentic Workflows generally available
+GitHub Copilot SDK is becoming Microsoft Copilot SDK
+Moderate role for GitHub Issues generally available
+GitHub Actions workflow lockfiles are generally available
+Copilot code review: Merge with confidence with Max and approvals
+Agent Merge watches and fixes pull requests in the cloud
+Create and manage Copilot Automations in Visual Studio Code
+Copilot Automations now learn from outcomes and self-improve
+New tools, triggers, and cost controls for Copilot Automations
+Connect your tools to Copilot without all the setup
+Pull request limits: Exempt contributors by age or history
+GitHub Actions adds multi-cloud compute to improve reliability
+Issue artifacts are now in public preview
+Public monitoring for enterprises generally available
+Push protection beyond predefined secret patterns
+Code scanning for AI applications in public preview
+AI Scan for repositories in public preview
+Work from anywhere with a new, connected Copilot cloud experience
+GitHub Copilot in JetBrains Universe releases
+Introducing Replica, an open-source AI prototyping tool
+Prioritize Dependabot alerts with reachability analysis
+GitHub Copilot supports server-to-server authentication
+GitHub Copilot assisted permissions generally available
+GPT-6.1 Terra in GitHub Copilot
+Usage metrics API adds usage from tools like OpenCode
 enterprise management tools
-GitHub Advanced Security expands trial availability
-Block pull requests with exposed secrets from merging
-Remediate Code Quality findings with agentic autofix
-Enterprise-managed sandbox in Copilot for JetBrains
+Turn notifications into code with GitHub Copilot in Teams
+Public monitoring adds triage, validity, API, and webhooks
+Enterprise installations for GitHub Apps generally available
+ecosystem & accessibility
 enterprise management tools
-GitHub Enterprise Server 3.22 is now generally available
-New customer portal help.github.com
-Automatic Dependabot access to GitHub-hosted registries
-GitHub Copilot weekly releases — August 31
-GPT-6 Astra is generally available in GitHub Copilot
-New API endpoint provides privacy-safe star history data
-Multiple trusted publishing configurations for npm
-GitHub Actions: Early September 2026 updates
-Upcoming deprecation of selected GitHub Copilot models
-GitHub CLI Linux package signing key expires September 5
-Gemini 3.8 Flash is now available in GitHub Copilot
-Reopening Copilot Business and Enterprise signups
-CodeQL 2.26.4 improves GitHub actions security detections
-Enterprise-managed settings support any default model
+GitHub Copilot in Visual Studio — September update
+Custom skills, agents, and MCP servers in usage metrics API
 enterprise management tools
-Content exclusions generally available in Copilot app and CLI
-Enterprise Live Migrations from GHES to ghe.com generally available
+Global default for Copilot features generally available
 enterprise management tools
-Set an expiration date for individual user budgets
+Meta API endpoints updated for Actions blob storage
+Public monitoring now available with data residency
+Pull requests: Saved whitespace preferences and improved split view
+Industry comparisons in the Copilot impact dashboard
 enterprise management tools
-Copilot code review can now approve pull requests
-Block users from discussion comments in personal repositories
-Claude Fable 5.1 is generally available in GitHub Copilot
-GitHub CLI: Media in issues, pull requests, and comments
+GitHub CLI: Opt in to expiring, auto-refreshing OAuth tokens
+Bulk migrate branch protections to rulesets for a repository
+Updates to GitHub secret scanning
+Dependabot alerts REST API now includes dependency versions
+GitHub package firewall in public preview
+Dependabot now supports npm 12, pnpm 11 and 12, and Bun 1.4
+Copilot model policy API for enterprise, orgs, and teams
+enterprise management tools
+GitHub Copilot models deprecated on October 19, 2026
+Some Git over HTTPS may temporarily require authentication
+CodeQL changes for macOS 27, Xcode 27, and Swift 6.4
+Open source license compliance generally available
+Xcode 27 runner image generally available
+Multi-repository support and other improvements for GitHub in Slack and Teams
+Download GitHub Code Quality license usage as a CSV
+Upcoming deprecation of selected GitHub Copilot models in mid-November
+AI Scan for pull requests generally available
+Agentic autofix for code scanning alerts general availability
+Email notifications for repository push events have been retired
+HydraFusion updates and new Max option
+GitHub Actions workflow lockfiles in public preview
+GitHub App improvements for least privilege and management
+enterprise management tools
+Gemini 4 Argon in GitHub Copilot
+Audit GitHub Code Quality finding dismissals and reopenings
+Secret scanning blocks Anthropic keys by default, adds Salesforce
+Enterprise managed settings enforcement updates
+enterprise management tools
+Improved detection for withdrawn Dependabot alerts
+Search and filter for budgets now available
+enterprise management tools
+Code scanning AI Scan metrics in security overview
+Client telemetry user attribution and configurable capture
+enterprise management tools
+Push attribution for commits in limited public preview
+Anonymous organization-level registries for Dependabot
+New controls and chat improvements in Copilot for JetBrains
+enterprise management tools
+GitHub Copilot weekly releases — October 5
+CodeQL 2.27.2 improves C++, Go, Rust, and JavaScript analysis
+Copilot code review: New organization billing options and controls
+Triage role users or higher can now archive pull requests
+Screen readers can navigate timelines as lists
+ecosystem & accessibility
+Draft pull requests count toward pull request limits
+Claude Haiku 5.5 in GitHub Copilot
+Purpose-built model for leaked secret detection
+Local sandboxing for GitHub Copilot now generally available
+Discover local models in GitHub Copilot CLI
+Update your IDE to restore agent activity in Copilot usage metrics
+enterprise management tools
+Stacked pull requests generally available
+Code scanning AI Scan enablement status in security overview
+Secret scanning adds detectors for Lovable, Supabase, and more
+Stateless GitHub App installation tokens rolled out
+ecosystem & accessibility
+Copilot code review: API support and new default effort level
+Unvalidated npm trusted publishing configurations now expire
+npm staged publishing now supports creating new packages
+Selected models in GitHub Copilot deprecated
+GitHub Copilot weekly releases — September 28
+New fields for SecurityAdvisory GraphQL API
+ecosystem & accessibility
+Confidential comments on repository security advisories
+Repository security advisory comments API in public preview
+ecosystem & accessibility
+Rate limits for private vulnerability reports
+Structured forms for private vulnerability reports
+GitHub Copilot can now interact with desktop apps with computer use
+GitHub Actions: macOS 14 runner image retirement
+GitHub Copilot in VS Code, September 2026 releases
+Accessibility statements highlighted on repository overview
+ecosystem & accessibility
+Actions retention now covers checks, runs, and statuses
+Scheduled code scanning skips inactive repositories
+Code coverage uploads no longer fail CI for new branches
+Dynamic workflows in Copilot CLI and the Copilot app
+New dashboard experience now the default
+GitHub async merge API generally available
+Actions Runner Controller release 0.15.0
 Subscribe to our developer newsletter
 Discover tips, technical guides, and best practices in our biweekly newsletter just for devs.
 By submitting, I agree to let GitHub and its affiliates use my information for personalized communications, targeted advertising, and campaign effectiveness. See the GitHub Privacy Statement for more details.
